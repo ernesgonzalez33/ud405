@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * TODO: Start here
@@ -43,10 +44,35 @@ public class StickFigure extends ApplicationAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        //Hago la cabeza
         renderer.begin(ShapeRenderer.ShapeType.Filled);
-        renderer.setColor(Color.BLACK);
+        renderer.setColor(Color.WHITE);
+        renderer.circle(150, 300, 50);
+        renderer.end();
 
-        renderer.circle(10, 1000, 50);
+        //Hago el torso
+        renderer.begin(ShapeRenderer.ShapeType.Line);
+        Vector2 torsoArriba = new Vector2(150, 250);
+        Vector2 torsoAbajo = new Vector2(150, 100);
+        renderer.line(torsoArriba, torsoAbajo);
+
+        //Hago los brazos
+        Vector2 hombroDerecho = new Vector2(150, 200);
+        Vector2 manoDerecha = new Vector2(200, 180);
+        renderer.line(hombroDerecho, manoDerecha);
+
+        Vector2 hombroIzquierdo = new Vector2(150, 200);
+        Vector2 manoIzquierda = new Vector2(100, 180);
+        renderer.line(hombroIzquierdo, manoIzquierda);
+
+        //Hago las piernas
+        Vector2 musloDerecho = new Vector2(150, 100);
+        Vector2 pieDerecho = new Vector2(200, 80);
+        renderer.line(musloDerecho, pieDerecho);
+
+        Vector2 musloIzquierdo = new Vector2(150, 100);
+        Vector2 pieIzquierdo = new Vector2(100, 80);
+        renderer.line(musloIzquierdo, pieIzquierdo);
 
         renderer.end();
 
