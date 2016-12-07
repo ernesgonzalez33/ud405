@@ -121,9 +121,9 @@ public class Closeup extends ApplicationAdapter {
     public void resize(int width, int height) {
         float aspectRatio = 1.0f * width / height;
         camera.setToOrtho(false, width, height);
-//        trackStar(camera, aspectRatio);
+        trackStar(camera, aspectRatio);
 //        trackPlanet(camera, aspectRatio);
-        trackSatellite(camera, aspectRatio);
+//        trackSatellite(camera, aspectRatio);
     }
 
 
@@ -149,7 +149,7 @@ public class Closeup extends ApplicationAdapter {
     private void trackStar(OrthographicCamera camera, float aspectRatio) {
         camera.viewportHeight = 2 * STAR_RADIUS;
         // This will stretch the star, since the aspect ratio doesn't match
-//        camera.viewportWidth = 2 * STAR_RADIUS;
+        camera.viewportWidth = 2 * STAR_RADIUS;
         camera.viewportWidth = aspectRatio * camera.viewportHeight;
         camera.position.set(STAR_CENTER_X, STAR_CENTER_Y, 0);
         camera.translate(STAR_RADIUS * (aspectRatio - 1), 0);
