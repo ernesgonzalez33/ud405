@@ -8,8 +8,8 @@ public class Constants {
     public static final float WORLD_SIZE = 10.0f;
     public static final Color BACKGROUND_COLOR = Color.BLUE;
 
-    public static final float PLAYER_HEAD_RADIUS = 0.5f;
-    public static final float PLAYER_HEAD_HEIGHT = 4.0f * PLAYER_HEAD_RADIUS;
+    public static final float PLAYER_HEAD_RADIUS = 0.8f;
+    public static final float PLAYER_HEAD_HEIGHT = 2.5f * PLAYER_HEAD_RADIUS;
     public static final float PLAYER_LIMB_WIDTH = 0.1f;
     public static final int PLAYER_HEAD_SEGMENTS = 20;
     public static final Color PLAYER_COLOR = Color.BLACK;
